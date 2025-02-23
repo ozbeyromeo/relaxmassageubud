@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relax Massage Ubud - Traditional Balinese Massage</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4a90e2;
+            --secondary-color: #f8f9fa;
+            --text-color: #333;
+            --accent-color: #e67e22;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .header {
+            background-color: rgba(255, 255, 255, 0.95);
+            padding: 1rem;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/hero-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 1rem;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .section {
+            padding: 5rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about {
+            background-color: white;
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .about-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .services {
+            background-color: var(--secondary-color);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .price-list {
+            margin-top: 4rem;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .price-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+        }
+
+        .price-table th, .price-table td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .price-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .contact {
+            background-color: white;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .gallery-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 10px;
+            transition: transform 0.3s;
+        }
+
+        .gallery-image:hover {
+            transform: scale(1.05);
+        }
+
+        .contact-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+
+        .btn-whatsapp {
+            background-color: #25D366;
+            color: white;
+        }
+
+        .btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                width: 100%;
+                text-align: center;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <a href="#" class="logo">Relax Massage Ubud</a>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Traditional Balinese Massage</h1>
+            <p>Experience authentic healing and relaxation in the heart of Ubud</p>
+            <a href="#contact" class="btn btn-primary">Book Now</a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="container">
+            <h2>Welcome to Relax Massage Ubud</h2>
+            <div class="about-grid">
+                <img src="images/storefront.jpg" alt="Relax Massage Ubud Storefront" class="about-image">
+                <div>
+                    <p>Located in the heart of Ubud, we offer authentic Balinese massage and therapeutic treatments. Our experienced therapists provide a range of services designed to rejuvenate your body and mind.</p>
+                    <p>Whether you're looking for deep tissue massage, traditional Balinese techniques, or aromatherapy, we ensure a peaceful and professional environment for your relaxation journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="section services">
+        <div class="container">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Hot Stones</h3>
+                    <p>Experience the warmth and soothing relief of the Tropics as therapist glides the smooth stone around the body. Stimulating circulation to remove blockages and opens the energy flow throughout your body.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Aromatherapy</h3>
+                    <p>Indulge yourself in an individually tailored combination of aromatherapy and Balinese massage for your perfect personalized treatment, enhancing emotional well-being and body rejuvenation.</p>
+                </div>
+                <div class="service-card">
+                    <h3>Deep Tissue</h3>
+                    <p>A therapeutic full body massage focusing on the back, neck and shoulder, relieving chronic patterns of tension and stress, soothe sore muscles and restore energy flow.</p>
+                </div>
+            </div>
+
+            <div class="price-list">
+                <h2>Price List</h2>
+                <table class="price-table">
+                    <thead>
+                        <tr>
+                            <th>Treatment</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Hot Stones</td>
+                            <td>60/90 mins</td>
+                            <td>IDR 230K/320K</td>
+                        </tr>
+                        <tr>
+                            <td>Aromatherapy</td>
+                            <td>60/90 mins</td>
+                            <td>IDR 230K/320K</td>
+                        </tr>
+                        <tr>
+                            <td>Deep Tissue</td>
+                            <td>60/90 mins</td>
+                            <td>IDR 200K/280K</td>
+                        </tr>
+                        <tr>
+                            <td>Balinese</td>
+                            <td>60/90 mins</td>
+                            <td>IDR 180K/250K</td>
+                        </tr>
+                        <tr>
+                            <td>Reflexology</td>
+                            <td>30/60 mins</td>
+                            <td>IDR 100K/150K</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section">
+        <div class="container">
+            <h2>Our Space</h2>
+            <div class="gallery">
+                <img src="images/hero-bg.jpg" alt="Massage Room" class="gallery-image">
+                <img src="images/storefront.jpg" alt="Spa Entrance" class="gallery-image">
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section contact">
+        <div class="container">
+            <h2>Book Your Session</h2>
+            <p>We offer services at our location and hotel/villa visits</p>
+            <div class="contact-buttons">
+                <a href="tel:+6281999050698" class="btn btn-primary">
+                    <i class="fas fa-phone"></i>
+                    Call Now
+                </a>
+                <a href="https://wa.me/6281999050698" class="btn btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    WhatsApp
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
