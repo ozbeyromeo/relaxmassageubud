@@ -229,6 +229,152 @@
                 justify-content: center;
             }
         }
+		/* Add these styles to your existing CSS */
+
+/* Add these styles to your existing CSS */
+
+/* Reviews Carousel */
+.reviews-carousel-container {
+    position: relative;
+    width: 100%;
+    margin: 2rem 0;
+    padding: 0 1rem;
+}
+
+.reviews-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    gap: 1.5rem;
+    padding: 1rem 0.5rem;
+}
+
+.reviews-carousel::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+.review-card {
+    flex: 0 0 auto;
+    width: 300px;
+    background: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.3s;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+}
+
+.review-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.review-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.review-avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 1rem;
+    object-fit: cover;
+}
+
+.stars {
+    color: #FFD700;
+    margin-top: 0.25rem;
+}
+
+.reviewer-info {
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.review-date {
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 0.25rem;
+}
+
+.review-text {
+    font-style: italic;
+    line-height: 1.6;
+    flex-grow: 1;
+    overflow: auto;
+}
+
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 2;
+}
+
+.prev-button {
+    left: 0;
+}
+
+.next-button {
+    right: 0;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: var(--primary-color);
+}
+
+.google-reviews-link {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+#reviews {
+    background-color: var(--secondary-color);
+}
+
+@media (max-width: 768px) {
+    .review-card {
+        width: 260px;
+    }
+    
+    .carousel-button {
+        width: 30px;
+        height: 30px;
+    }
+}
     </style>
 </head>
 <body>
@@ -334,13 +480,140 @@
 
     <section id="gallery" class="section">
         <div class="container">
-            <h2>Our Space</h2>
+            <h2>My Space</h2>
             <div class="gallery">
                 <img src="images/hero-bg.jpg" alt="Massage Room" class="gallery-image">
                 <img src="images/storefront.jpg" alt="Spa Entrance" class="gallery-image">
             </div>
         </div>
     </section>
+	<!-- Add this section before the contact section -->
+<!-- Add this section before the contact section -->
+<section id="reviews" class="section">
+    <div class="container">
+        <h2>Our Reviews</h2>
+        <p>Don't just take my word for it - see what my customers have to say about their experience</p>
+        
+        <div class="reviews-carousel-container">
+            <button class="carousel-button prev-button">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            
+            <div class="reviews-carousel">
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviewers/phil.png" alt="Phil Town" class="review-avatar">
+                        <div>
+                            <h4>Phil Town</h4>
+                            <div class="reviewer-info">Local Guide · 23 reviews · 8 photos</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">a month ago</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Wayan offers an excellent deep tissue massage for an affordable price. He is experienced, has strong hands and can speak very good English. Would go again."</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviewers/lena.png" alt="Lena Schimmelpfennig" class="review-avatar">
+                        <div>
+                            <h4>Lena Schimmelpfennig</h4>
+                            <div class="reviewer-info">1 review</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">10 months ago</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Highly recommended! I just had a mix of Balinese and deep tissue massage and it was great! He found and worked on my problem zones. I am feeling much better now. Thank you!"</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviewers/ignacio.png" alt="Ignacio Elorduy" class="review-avatar">
+                        <div>
+                            <h4>Ignacio Elorduy</h4>
+                            <div class="reviewer-info">10 reviews</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">9 months ago</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Wayan's massage skills are top-notch! The deep tissue and Balinese massage I had were fantastic, and the price was just right. Totally worth it!"</p>
+                </div>
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviewers/alena.png" alt="alena" class="review-avatar">
+                        <div>
+                            <h4>alena</h4>
+                            <div class="reviewer-info">7 reviews · 3 photos</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">6 months ago</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"One of the best massages I've had so far! The therapist is friendly and funny. He even picked me up at my place because I couldn't get a gojek ride due to Independence day."</p>
+                </div>
+                
+                
+                <div class="review-card">
+                    <div class="review-header">
+                        <img src="images/reviewers/dwi.png" alt="Dwi Purwanti" class="review-avatar">
+                        <div>
+                            <h4>Dwi Purwanti</h4>
+                            <div class="reviewer-info">8 reviews</div>
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <div class="review-date">3 months ago</div>
+                        </div>
+                    </div>
+                    <p class="review-text">"Highly recommended Wayan for his massage expertise especially reflexology massage."</p>
+                </div>
+            </div>
+            
+            <button class="carousel-button next-button">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+        
+        <div class="carousel-dots">
+            <!-- Dots will be added by JavaScript -->
+        </div>
+        
+        <div class="google-reviews-link">
+            <a href="https://www.google.com/maps/place/Relax+Traditional+Massage+Therapist+Sehat/@-8.456781,115.3021801,19.33z/data=!4m8!3m7!1s0x2dd219658233bda1:0xcdd85b9b3b47a175!8m2!3d-8.4567166!4d115.3021223!9m1!1b1!16s%2Fg%2F11hj_x2ysb?entry=ttu" class="btn btn-primary" target="_blank">
+                <i class="fab fa-google"></i>
+                See All Reviews on Google
+            </a>
+        </div>
+    </div>
+</section>
 
     <section id="contact" class="section contact">
         <div class="container">
@@ -369,6 +642,76 @@
                 });
             });
         });
+		
+		// Add this to your existing script tags at the bottom of the page
+document.addEventListener('DOMContentLoaded', function() {
+    // Reviews carousel functionality
+    const carousel = document.querySelector('.reviews-carousel');
+    const prevButton = document.querySelector('.prev-button');
+    const nextButton = document.querySelector('.next-button');
+    const cards = carousel.querySelectorAll('.review-card');
+    const dotsContainer = document.querySelector('.carousel-dots');
+    
+    // Calculate how many cards to show based on viewport
+    let cardsToShow = window.innerWidth >= 768 ? 3 : 1;
+    let currentIndex = 0;
+    
+    // Create dots
+    for (let i = 0; i < Math.ceil(cards.length / cardsToShow); i++) {
+        const dot = document.createElement('div');
+        dot.classList.add('dot');
+        if (i === 0) dot.classList.add('active');
+        dot.addEventListener('click', () => {
+            currentIndex = i * cardsToShow;
+            updateCarousel();
+        });
+        dotsContainer.appendChild(dot);
+    }
+    
+    // Update active dot
+    function updateDots() {
+        const dots = dotsContainer.querySelectorAll('.dot');
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === Math.floor(currentIndex / cardsToShow));
+        });
+    }
+    
+    // Function to scroll carousel to current index
+    function updateCarousel() {
+        // Make sure we don't go out of bounds
+        if (currentIndex < 0) currentIndex = 0;
+        if (currentIndex > cards.length - cardsToShow) currentIndex = cards.length - cardsToShow;
+        
+        // Scroll to current card
+        const cardWidth = cards[0].offsetWidth + parseInt(getComputedStyle(cards[0]).marginRight);
+        carousel.scrollTo({
+            left: currentIndex * cardWidth,
+            behavior: 'smooth'
+        });
+        
+        updateDots();
+    }
+    
+    // Event listeners for buttons
+    prevButton.addEventListener('click', () => {
+        currentIndex -= cardsToShow;
+        updateCarousel();
+    });
+    
+    nextButton.addEventListener('click', () => {
+        currentIndex += cardsToShow;
+        updateCarousel();
+    });
+    
+    // Resize listener to adjust cards to show
+    window.addEventListener('resize', () => {
+        cardsToShow = window.innerWidth >= 768 ? 3 : 1;
+        updateCarousel();
+    });
+    
+    // Initialize
+    updateCarousel();
+});
     </script>
 </body>
 </html>
